@@ -1,11 +1,11 @@
 """Geometry module initialization file."""
 
 from .geometry_utils import (
-    _Rectangle as Rectangle,
-    _Triangle as Triangle,
-    _Circle as Circle,
+    Rectangle as rect,
+    Triangle as tri,
+    Circle as circ,
 )
 
-__all__ = ["Rectangle", "Triangle", "Circle"]
+__all__ = ["rect", "tri", "circ"]
 
 # print("Geometry module loaded. Available classes: Rectangle, Triangle, Circle.")
