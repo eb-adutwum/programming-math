@@ -1,0 +1,22 @@
+[project]
+name = "programming-math"
+version = "0.1.0"
+description = "A Python math library for learning and DevOps practice"
+dependencies = [
+    "sympy",
+    "pytest"
+]
+authors = [{ name = "Elijah Boateng", email = "eb.adutwum@gmail.com" }]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.optional-dependencies]
+dev = ["black"]
