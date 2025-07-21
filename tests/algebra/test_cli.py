@@ -78,5 +78,4 @@ def test_wrong_arg_position_cli():
         stderr=subprocess.PIPE,
         text=True,
     )
-
     assert result.returncode > 0

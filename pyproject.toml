@@ -6,7 +6,7 @@ dependencies = [
     "sympy",
     "pytest"
 ]
-authors = [{ name = "Elijah Boateng", email = "eb.adutwum@gmail.com" }]
+authors = [{ name = ["Elijah Boateng", "Kwadwo Annor"], email = ["eb.adutwum@gmail.com", "kaannor@gmail.com"]}]
 
 [build-system]
 requires = ["setuptools"]
