@@ -1,3 +1,4 @@
-mathvenv
+.mathvenv
 .idea
 __pycache__/
+*.egg-info
