@@ -1,9 +1,15 @@
+"""Test cases for the algebra CLI commands."""
+
 import subprocess
 import sys
 from pathlib import Path
 
 
 def test_factor_cli():
+    """
+    Test the factor command in the algebra CLI.
+    :return: None
+    """
     script_path = (
         Path(__file__).resolve().parents[2] / "src" / "algebra" / "__main__.py"
     )
@@ -14,12 +20,17 @@ def test_factor_cli():
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         text=True,
+        check=True,
     )
 
     assert "(x - 1)*(x + 1)" in result.stdout
 
 
 def test_expand_cli():
+    """
+    Test the expand command in the algebra CLI.
+    :return: None
+    """
     script_path = (
         Path(__file__).resolve().parents[2] / "src" / "algebra" / "__main__.py"
     )
@@ -29,13 +40,18 @@ def test_expand_cli():
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         text=True,
+        check=True,
     )
 
     assert "x**2 - 1" in result.stdout
 
 
 def test_simplify_cli():
-    # Path to your CLI script
+    """
+    Test the simplify command in the algebra CLI.
+    :return: None
+    """
+    # path to cli script
     script_path = (
         Path(__file__).resolve().parents[2] / "src" / "algebra" / "__main__.py"
     )
@@ -45,13 +61,17 @@ def test_simplify_cli():
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         text=True,
+        check=True,
     )
 
     assert "x**2 - 1" in result.stdout
 
 
 def test_wrong_command_cli():
-    # Path to the cli script
+    """
+    Test the CLI with a command that does not exist.
+    :return: None
+    """
     script_path = (
         Path(__file__).resolve().parents[2] / "src" / "algebra" / "__main__.py"
     )
@@ -61,6 +81,7 @@ def test_wrong_command_cli():
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         text=True,
+        check=False,  # We expect this to fail
     )
 
     # using the error code
@@ -68,7 +89,10 @@ def test_wrong_command_cli():
 
 
 def test_wrong_arg_position_cli():
-    # Path to the script
+    """
+    Test the CLI with an incorrect argument position.
+    :return: None
+    """
     script_path = (
         Path(__file__).resolve().parents[2] / "src" / "algebra" / "__main__.py"
     )
@@ -77,5 +101,6 @@ def test_wrong_arg_position_cli():
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         text=True,
+        check=False,
     )
     assert result.returncode > 0

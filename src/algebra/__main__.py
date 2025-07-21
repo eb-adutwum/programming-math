@@ -1,8 +1,14 @@
+"""CLI for algebra operations: factor, simplify, expand expressions."""
+
 import argparse
 from algebra.algebra_utils import factor, simplify, expand
 
 
 def main():
+    """
+    Main function to handle command line interface for algebra operations.
+    :return: None
+    """
     parser = argparse.ArgumentParser(
         description="Algebra CLI: factor, simplify, expand expressions."
     )

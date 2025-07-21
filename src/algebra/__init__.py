@@ -9,5 +9,3 @@ from .algebra_utils import (
 )
 
 __all__ = ["factor", "simplify", "expand", "solve", "substitute"]
-
-# print("Algebra module loaded. Available functions: factor, simplify, expand, solve, substitute.")

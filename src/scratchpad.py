@@ -1,6 +1,6 @@
-from sympy import symbols, factor, expand, simplify, solve, Eq
+"""Scratchpad for testing and experimenting with code snippets."""
 
-from src.algebra import factor, simplify, expand, solve
+from src.algebra import solve
 
 equations = {"eq1": "v = 1/2 * m * v**2"}
 result = solve(variables="v", **equations)
