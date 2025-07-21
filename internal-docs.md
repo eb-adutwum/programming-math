@@ -43,7 +43,7 @@ programming-math/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/programming-math.git
+git clone https://github.com/eb-adutwum/programming-math.git
 cd programming-math
 ```
 
