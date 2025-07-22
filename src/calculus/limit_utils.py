@@ -13,8 +13,7 @@ def lim(expression: str, point: float, *, side="+") -> float:
     :return: The limit of the expression as it approaches the point.
     """
     # Substitute the point into the expression
-    if is_polynomial(expression):
-
+    if is_polynomial_weak(expression):
         if point == float("-inf") or point == float("inf"):
             return point
 
@@ -24,9 +23,10 @@ def lim(expression: str, point: float, *, side="+") -> float:
     return float(limit(simplify(expression), simplify("x"), point, side))
 
 
-def is_polynomial(expression: str) -> bool:
+def is_polynomial_weak(expression: str) -> bool:
     """
-    Check if the expression is a polynomial.
+    Check if the expression is a polynomial and
+    some weak conditions for rational functions that can use simple substitution.
     :param expression: The expression to check.
     :return: True if the expression is a polynomial, False otherwise.
     """
