@@ -48,7 +48,7 @@ def _substitute(expression: str, variables: dict) -> float:
     for i in range(len(expression)):
         temp = expression[i]
         if temp in variables:
-            temp = str(variables[temp])
+            temp = "(" + str(variables[temp]) + ")"
         expr += temp
 
     return _simplify(expr)
