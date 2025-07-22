@@ -27,7 +27,7 @@ jobs:
 
       - name: Lint
         run: |
-          python -m flake8 src tests
+          python -m flake8 src tests --max-line-length=100
 
       - name: Check formatting
         run: |
