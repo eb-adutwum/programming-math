@@ -63,105 +63,68 @@ def test_circle_circumference_if_float():
 
 
 def test_rectangle_area_if_zero():
-    temp = "might fail"
-    try:
-        temp = "fail"
-        rect_obj = rect(0, 10)
-    except ValueError:
-        temp = "passed"
-    assert temp == "passed"
+    with pytest.raises(ValueError) as execution_info:
+        rect(0, 10)
+    assert str(execution_info.value) == "Sides must be positive numbers."
 
 
 def test_rectangle_perimeter_if_zero():
-    temp = "might fail"
-    try:
-        temp = "fail"
-        rect_obj = rect(0, 10)
-    except ValueError:
-        temp = "passed"
-    assert temp == "passed"
+    with pytest.raises(ValueError) as execution_info:
+        rect(0, 10)
+    assert str(execution_info.value) == "Sides must be positive numbers."
 
 
 def test_triangle_area_if_zero():
-    temp = "might fail"
-    try:
-        temp = "fail"
-        tri_obj = tri(0, 4, 5)
-    except ValueError:
-        temp = "passed"
-    assert temp == "passed"
+    with pytest.raises(ValueError) as execution_info:
+        tri(0, 4, 5)
+    assert str(execution_info.value) == "Sides must be positive numbers."
 
 
 def test_triangle_perimeter_if_zero():
-    temp = "might fail"
-    try:
-        temp = "fail"
-        tri_obj = tri(0, 4, 5)
-    except ValueError:
-        temp = "passed"
-    assert temp == "passed"
+    with pytest.raises(ValueError) as execution_info:
+        tri(0, 4, 5)
+    assert str(execution_info.value) == "Sides must be positive numbers."
 
 
 def test_circle_area_if_zero():
-    temp = "might fail"
-    try:
-        temp = "fail"
-        circ_obj = circ(0)
-    except ValueError:
-        temp = "passed"
-    assert temp == "passed"
+    with pytest.raises(ValueError) as execution_info:
+        circ(0)
+    assert str(execution_info.value) == "Radius must be a positive number."
 
 
 def test_circle_circumference_if_zero():
-    temp = "might fail"
-    try:
-        temp = "fail"
-        circ_obj = circ(0)
-    except ValueError:
-        temp = "passed"
-    assert temp == "passed"
+    with pytest.raises(ValueError) as execution_info:
+        circ(0)
+    assert str(execution_info.value) == "Radius must be a positive number."
 
 
 def test_rectangle_area_if_negative():
-    temp = "might fail"
-    try:
-        temp = "fail"
-        rect_obj = rect(-5, 10)
-    except ValueError:
-        temp = "passed"
-    assert temp == "passed"
+    with pytest.raises(ValueError) as execution_info:
+        rect(-5, 10)                
+    assert str(execution_info.value) == "Sides must be positive numbers."
 
 
 def test_rectangle_perimeter_if_negative():
-    temp = "might fail"
-    try:
-        temp = "fail"
-        rect_obj = rect(-5, 10)
-    except ValueError:
-        temp = "passed"
-    assert temp == "passed"
+    with pytest.raises(ValueError) as execution_info:
+        rect(-5, 10)                
+    assert str(execution_info.value) == "Sides must be positive numbers."
+
 
 
 def test_triangle_area_if_negative():
-    temp = "might fail"
-    try:
-        temp = "fail"
-        tri_obj = tri(-3, 4, 5)
-    except ValueError:
-        temp = "passed"
-    assert temp == "passed"
+    with pytest.raises(ValueError) as execution_info:
+        tri(-3, 4, 5)
+    assert str(execution_info.value) == "Sides must be positive numbers."
+
 
     # pytest.raises(ValueError, tri._area())
 
 
 def test_triangle_perimeter_if_negative():
-    temp = "might fail"
-    try:
-        temp = "fail"
-        tri_obj = tri(-3, 4, 5)
-    except ValueError:
-        temp = "passed"
-    assert temp == "passed"
+    with pytest.raises(ValueError) as execution_info:
+        tri(-3, 4, 5)
+
+    assert str(execution_info.value) == "Sides must be positive numbers."
 
 
 def test_circle_area_if_negative():
@@ -172,10 +135,7 @@ def test_circle_area_if_negative():
 
 
 def test_circle_circumference_if_negative():
-    temp = "might fail"
-    try:
-        temp = "fail"
-        circ_obj = circ(-7)
-    except ValueError:
-        temp = "passed"
-    assert temp == "passed"
+    with pytest.raises(ValueError) as execution_info:
+        circ(-5)
+
+    assert str(execution_info.value) == "Radius must be a positive number."
