@@ -89,4 +89,10 @@ if __name__ == "__main__":
             "expressions should be in quotes and arguments separated by commas"
         )
         sys.exit(1)
-    main()
+    try:
+        main()
+    except ArithmeticError as e:
+        print(f"Error: {e}")
+        print("Usage: python -m calculus <operation> <expression>")
+        print("Example: python -m calculus lim 'x**2 + 2*x + 1,1'")
+        sys.exit(1)

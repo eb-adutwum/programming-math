@@ -5,7 +5,9 @@ import sys
 from pathlib import Path
 
 
-entry_script_path = (Path(__file__).resolve().parents[2] / "src" / "calculus" / "__main__.py")
+entry_script_path = (
+    Path(__file__).resolve().parents[2] / "src" / "calculus" / "__main__.py"
+)
 
 
 def test_limit_cli():
@@ -23,6 +25,7 @@ def test_limit_cli():
     )
 
     assert "4.0" in result.stdout
+
 
 def test_limit_cli_polynomial():
     """
@@ -73,6 +76,7 @@ def test_limit_cli_negative():
     )
 
     assert "0.0" in result.stdout
+
 
 def test_limit_cli_fraction():
     """
