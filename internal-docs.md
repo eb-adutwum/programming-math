@@ -25,7 +25,7 @@ programming-math/
 ├── tests/
 │   ├── algebra/               # Unit and CLI tests for algebra
 │   │   ├── test_algebra_utils.py
-│   │   └── test_cli.py
+│   │   └── test_algebra_cli.py
 │   └── calculus/              # (Pending)
 │
 ├── .github/                   # (Optional) GitHub actions or PR templates
@@ -84,7 +84,7 @@ python -m pytest
 Run a specific test file:
 
 ```bash
-python -m pytest tests/algebra/test_cli.py
+python -m pytest tests/algebra/test_algebra_cli.py
 ```
 
 Check CLI integration (uses `subprocess`):

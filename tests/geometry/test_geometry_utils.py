@@ -122,6 +122,7 @@ def test_rectangle_area_if_zero():
 
     with pytest.raises(ValueError) as execution_info:
         rect(0, 10)
+
     assert str(execution_info.value) == "Sides must be positive numbers."
 
 
@@ -133,6 +134,7 @@ def test_rectangle_perimeter_if_zero():
 
     with pytest.raises(ValueError) as execution_info:
         rect(0, 10)
+
     assert str(execution_info.value) == "Sides must be positive numbers."
 
 
@@ -143,6 +145,7 @@ def test_triangle_area_if_zero():
     """
     with pytest.raises(ValueError) as execution_info:
         tri(0, 4, 5)
+
     assert str(execution_info.value) == "Sides must be positive numbers."
 
 
@@ -153,64 +156,28 @@ def test_triangle_perimeter_if_zero():
     """
     with pytest.raises(ValueError) as execution_info:
         tri(0, 4, 5)
+
     assert str(execution_info.value) == "Sides must be positive numbers."
 
 
-def test_circle_area_if_zero():
-    """
-    Test the area of a circle with zero radius.
-    :return: None
-    """
+def test_circle_radius_if_zero():
+    """Test the area and circumference of a circle with zero radius."""
     with pytest.raises(ValueError) as execution_info:
         circ(0)
+
     assert str(execution_info.value) == "Radius must be a positive number."
 
 
-def test_circle_circumference_if_zero():
-    """
-    Test the circumference of a circle with zero radius.
-    :return: None
-    """
-    with pytest.raises(ValueError) as execution_info:
-        circ(0)
-    assert str(execution_info.value) == "Radius must be a positive number."
-
-
-def test_rectangle_area_if_negative():
-    """
-    Test the area of a rectangle with negative sides.
-    :return: None
-    """
+def test_rectangle_dimensions_if_negative():
+    """Test the perimeter of a rectangle with negative dimensions."""
     with pytest.raises(ValueError) as execution_info:
         rect(-5, 10)
+
     assert str(execution_info.value) == "Sides must be positive numbers."
 
 
-def test_rectangle_perimeter_if_negative():
-    """
-    Test the perimeter of a rectangle with negative sides.
-    :return: None
-    """
-    with pytest.raises(ValueError) as execution_info:
-        rect(-5, 10)
-    assert str(execution_info.value) == "Sides must be positive numbers."
-
-
-def test_triangle_area_if_negative():
-    """
-    Test the area of a triangle with negative sides.
-    :return: None
-    """
-    with pytest.raises(ValueError) as execution_info:
-        tri(-3, 4, 5)
-    assert str(execution_info.value) == "Sides must be positive numbers."
-
-
-def test_triangle_perimeter_if_negative():
-    """
-    Test the perimeter of a triangle with negative sides.
-    :return: None
-    """
+def test_triangle_dimensions_if_negative():
+    """Test the area of a triangle with negative sides."""
     with pytest.raises(ValueError) as execution_info:
         tri(-3, 4, 5)
 
