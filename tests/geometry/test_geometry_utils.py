@@ -165,13 +165,10 @@ def test_triangle_perimeter_if_negative():
 
 
 def test_circle_area_if_negative():
-    temp = "might fail"
-    try:
-        temp = "fail"
-        circ_obj = circ(-7)
-    except ValueError:
-        temp = "passed"
-    assert temp == "passed"
+    with pytest.raises(ValueError) as execution_info:
+        circ(-5)
+
+    assert str(execution_info.value) == "Radius must be a positive number."
 
 
 def test_circle_circumference_if_negative():
