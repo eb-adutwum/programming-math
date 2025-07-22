@@ -19,3 +19,18 @@ def test_lim_negative():
 
 def test_lim_fraction():
     assert lim("x/(x+1)", 0) == float(0)
+
+def test_lim_infinity():
+    assert lim("1/x", float("inf")) == float(0)
+
+def test_lim_negative_infinity():
+    assert lim("1/x", float("-inf")) == float(0)
+
+def test_lim_direction_positive():
+    assert lim("1/x", 0, side="+") == float("inf")
+
+def test_lim_direction_negative():
+    assert lim("1/x", 0, side="-") == float("-inf")
+
+def test_lim_polynomial_infinity():
+    assert lim("x**2 + 2*x + 1", float("inf")) == float("inf")
