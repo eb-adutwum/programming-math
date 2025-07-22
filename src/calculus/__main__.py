@@ -71,6 +71,11 @@ def _is_float(s: str) -> bool:
     :param s: The string to check.
     :return: True if the string can be converted to a float, False otherwise.
     """
+    try:
+        float(s)
+        return True
+    except ValueError:
+        pass
     return s.replace(".", "").isnumeric()
 
 
