@@ -1,26 +1,27 @@
 """limits module"""
-from coverage.debug import simplify
 
+from sympy import limit, simplify
 from algebra import substitute
-from sympy import limit
 
 
 def lim(expression: str, point: float, *, side="+") -> float:
     """
     Calculate the limit of an expression as it approaches a point.
-    :param side: direction of limit
+    :param side: Direction
     :param expression: The expression to evaluate.
     :param point: The point to approach.
     :return: The limit of the expression as it approaches the point.
     """
     # Substitute the point into the expression
     if is_polynomial(expression):
-        if point != float('-inf') or point != float('inf'):
-            substituted_expression = substitute(expression, {"x": point})
-            return float(substituted_expression)
-        return point
-    else:
-        return float(limit(simplify(expression), simplify('x'), point, side))
+
+        if point == float("-inf") or point == float("inf"):
+            return point
+
+        substituted_expression = substitute(expression, {"x": point})
+        return float(substituted_expression)
+
+    return float(limit(simplify(expression), simplify("x"), point, side))
 
 
 def is_polynomial(expression: str) -> bool:
