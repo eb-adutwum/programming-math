@@ -100,15 +100,14 @@ def test_circle_circumference_if_zero():
 
 def test_rectangle_area_if_negative():
     with pytest.raises(ValueError) as execution_info:
-        rect(-5, 10)                
+        rect(-5, 10)
     assert str(execution_info.value) == "Sides must be positive numbers."
 
 
 def test_rectangle_perimeter_if_negative():
     with pytest.raises(ValueError) as execution_info:
-        rect(-5, 10)                
+        rect(-5, 10)
     assert str(execution_info.value) == "Sides must be positive numbers."
-
 
 
 def test_triangle_area_if_negative():
@@ -116,8 +115,6 @@ def test_triangle_area_if_negative():
         tri(-3, 4, 5)
     assert str(execution_info.value) == "Sides must be positive numbers."
 
-
-    # pytest.raises(ValueError, tri._area())
 
 
 def test_triangle_perimeter_if_negative():
