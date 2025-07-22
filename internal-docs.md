@@ -161,7 +161,7 @@ git switch -c feat/algebra-improve-solve
 python -m pytest
 
 # Format code
-black src/ tests/
+python -m black src/ tests/
 
 # Stage and commit
 git add .
