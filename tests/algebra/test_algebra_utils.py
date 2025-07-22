@@ -18,7 +18,7 @@ def assert_equivalent(expr1: any, expr2: any) -> None:
 
 def test_factor_diff_two_squares():
     """
-    Test the factorization of difference of squares.
+    Test the factorization of the difference of squares.
     :return: None
     """
     assert_equivalent(factor("x**2 - 4"), "(x - 2)*(x + 2)")
@@ -37,7 +37,7 @@ def test_factor_trinomials():
 
 def test_factor_sum_of_squares():
     """
-    Test the factorization of sum of squares.
+    Test the factorization of the sum of squares.
     :return: None
     """
     assert_equivalent(factor("x**2 + 1"), "x**2 + 1")  # Cannot be factored over reals
