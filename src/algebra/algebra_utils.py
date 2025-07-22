@@ -20,13 +20,13 @@ def _simplify(expression: str) -> any:
 def parse_eq(equation: str) -> str:
     """
     Parses an equation string into a SymPy Eq object.
-    :param equation: str - The equation string to parse.
+    :param equation: The equation string to parse.
     :return: Eq - A SymPy Eq object representing the equation.
     """
     if "=" in equation:
         lhs, rhs = equation.split("=")
         return Eq(_simplify(lhs), _simplify(rhs))
-    return Eq(_simplify(equation))
+    return Eq(_simplify(equation), "")
 
 
 def _solve(*, variables: str = "x", **equations) -> any:
