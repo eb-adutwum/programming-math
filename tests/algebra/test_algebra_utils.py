@@ -2,7 +2,6 @@
 factorization, simplification, expansion, solving equations, and substitution."""
 
 from sympy import nsimplify
-
 from src.algebra import factor, simplify, expand, solve, substitute
 
 
