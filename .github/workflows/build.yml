@@ -62,7 +62,7 @@ jobs:
 
       - name: Publish package
         run: |
-          python -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+          python -m twine upload --verbose --repository-url https://test.pypi.org/legacy/ dist/*
         env:
           TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
           TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
