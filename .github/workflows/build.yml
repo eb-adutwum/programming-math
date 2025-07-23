@@ -27,7 +27,7 @@ jobs:
 
       - name: Build package
         run: |
-          rm -rf dist/ build/ *.egg-info/ 
+          rm -rf dist/ build/ *.egg-info/
           python -m build
 
       - name: Artifacts
